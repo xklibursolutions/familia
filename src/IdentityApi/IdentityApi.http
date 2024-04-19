@@ -1,0 +1,22 @@
+@IdentityApi_HostAddress = http://localhost:55001
+
+POST {{IdentityApi_HostAddress}}/api/register
+Content-Type: application/json
+
+{
+  "username": "",
+  "email": "",
+  "password": ""
+}
+
+###
+
+POST {{IdentityApi_HostAddress}}/api/auth
+Content-Type: application/json
+
+{
+  "username": "",
+  "password": ""
+}
+
+###
