@@ -29,24 +29,24 @@ Pour le développement local, nous utilisons l'outil Secret Manager pour stocker 
 
 Pour utiliser l'outil Secret Manager, suivez ces étapes :
 
-1. Naviguez jusqu'au répertoire du projet où se trouve votre fichier `.csproj`.
+1. Naviguez jusqu'au répertoire où se trouve votre fichier `.sln`.
 
-2. Exécutez la commande suivante pour initialiser le Secret Manager pour votre projet :
+2. Exécutez la commande suivante pour initialiser le Secret Manager pour chaque projet :
 
 ```
-dotnet user-secrets init
+dotnet user-secrets init --project .\src\IdentityApi\
 ```
 
 3. Définissez la chaîne de connexion dans le Secret Manager en exécutant :
 
 ```
-dotnet user-secrets set "ConnectionStrings:IdentityDb" "Data Source=./Identity.db"
+dotnet user-secrets set "ConnectionStrings:IdentityDb" "Data Source=./Identity.db" --project .\src\IdentityApi\
 ```
 
 4. Ajoutez le secret JWT à vos secrets locaux en utilisant la commande suivante :
 
 ```
-dotnet user-secrets set “JWT:Secret” “<Votre_Secret_JWT>”
+dotnet user-secrets set “JWT:Secret” “<Votre_Secret_JWT>” --project .\src\IdentityApi\
 ```
 
 Remplacez `<Votre_Secret_JWT>` par votre véritable secret JWT.
@@ -54,16 +54,27 @@ Remplacez `<Votre_Secret_JWT>` par votre véritable secret JWT.
 5. (Optionnel) Définissez le `ValidAudience` et le `ValidIssuer` pour la configuration JWT :
 
 ```
-dotnet user-secrets set “JWT:ValidAudience” “<Votre_Audience>”
-dotnet user-secrets set “JWT:ValidIssuer” “<Votre_Emetteur>”
+dotnet user-secrets set “JWT:ValidAudience” “<Votre_Audience>” --project .\src\IdentityApi\
+dotnet user-secrets set “JWT:ValidIssuer” “<Votre_Emetteur>” --project .\src\IdentityApi\
 ```
 
 Remplacez `<Votre_Audience>` et `<Votre_Emetteur>` par les valeurs réelles que vous souhaitez utiliser.
 
-6. Pour vérifier que les secrets ont été correctement définis, listez tous les secrets pour le projet :
+6. Ajoutez les secrets pour utilisateurs factices pour le projet de test:
 
 ```
-dotnet user-secrets list
+dotnet user-secrets set “UnitTestUserName” “<Votre_UserName>” --project .\tests\IdentityApiTest\
+dotnet user-secrets set “UnitTestPassword” “<Votre_Mot_De_Passe>” --project .\tests\IdentityApiTest\
+dotnet user-secrets set “UnitTestSecret” “<Votre_Secret_JWT>” --project .\tests\IdentityApiTest\
+dotnet user-secrets set “UnitTestValidAudience” “<Votre_Audience>” --project .\tests\IdentityApiTest\
+dotnet user-secrets set “UnitTestValidIssuer” “<Votre_Emetteur>” --project .\tests\IdentityApiTest\
+```
+
+7. Pour vérifier que les secrets ont été correctement définis, listez tous les secrets pour le projet :
+
+```
+dotnet user-secrets list --project .\src\IdentityApi\
+dotnet user-secrets list --project .\tests\IdentityApiTest\
 ```
 
 Les secrets sont stockés de manière sécurisée sur votre machine locale et sont associés à votre profil utilisateur.
