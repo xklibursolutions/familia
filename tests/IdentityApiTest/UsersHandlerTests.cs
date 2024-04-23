@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using XkliburSolutions.Familia.Domain.Constants;
 using XkliburSolutions.Familia.Domain.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.Extensions.Configuration;
 
 namespace XkliburSolutions.Familia.Tests;
 
@@ -14,11 +15,16 @@ public class UsersHandlerTests
 {
     private readonly Mock<UserManager<ApplicationUser>> _userManagerMock;
     private readonly UsersHandler _usersHandler;
+    private readonly IConfiguration _configuration;
 
     public UsersHandlerTests()
     {
         _userManagerMock = new Mock<UserManager<ApplicationUser>>(Mock.Of<IUserStore<ApplicationUser>>(), null!, null!, null!, null!, null!, null!, null!, null!);
         _usersHandler = new UsersHandler(_userManagerMock.Object);
+        IConfigurationBuilder builder = new ConfigurationBuilder()
+                .AddUserSecrets<UsersHandlerTests>()
+                .AddEnvironmentVariables();
+        _configuration = builder.Build();
     }
 
     [Fact]
@@ -38,9 +44,9 @@ public class UsersHandlerTests
     public async Task GetUserAsync_ReturnsUserDetails_WhenUserIsAuthenticated()
     {
         // Arrange
-        ClaimsIdentity claimsIdentity = new([new Claim(ClaimTypes.Name, "testuser")], "TestAuthType");
+        ClaimsIdentity claimsIdentity = new([new Claim(ClaimTypes.Name, _configuration["UnitTestUserName"]!)], "Bearer");
         ClaimsPrincipal claimsPrincipal = new(claimsIdentity);
-        ApplicationUser applicationUser = new() { Id = "1", UserName = "testuser", Email = "testuser@example.com", PhoneNumber = "1234567890" };
+        ApplicationUser applicationUser = new() { Id = "1", UserName = _configuration["UnitTestUserName"], Email = "testuser@example.com", PhoneNumber = "1234567890" };
         _userManagerMock.Setup(x => x.FindByNameAsync(It.IsAny<string>())).ReturnsAsync(applicationUser);
 
         // Act
@@ -62,7 +68,7 @@ public class UsersHandlerTests
     public async Task GetUserAsync_ReturnsBadRequest_WhenUserNotFound()
     {
         // Arrange
-        ClaimsIdentity claimsIdentity = new([new Claim(ClaimTypes.Name, "testuser")], "TestAuthType");
+        ClaimsIdentity claimsIdentity = new([new Claim(ClaimTypes.Name, _configuration["UnitTestUserName"]!)], "Bearer");
         ClaimsPrincipal claimsPrincipal = new(claimsIdentity);
 
         _userManagerMock.Setup(x => x.FindByNameAsync(It.IsAny<string>())).ReturnsAsync((ApplicationUser)null!);

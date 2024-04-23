@@ -26,3 +26,9 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      env:
+        UnitTestUserName: ${{ secrets.UnitTestUserName }}
+        UnitTestPassword: ${{ secrets.UnitTestPassword }}
+        UnitTestSecret: ${{ secrets.UnitTestSecret }}
+        UnitTestValidAudience: ${{ vars.UnitTestValidAudience }}
+        UnitTestValidIssuer: ${{ vars.UnitTestValidIssuer }}
