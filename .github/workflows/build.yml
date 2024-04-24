@@ -9,10 +9,6 @@ on:
     tags:
       - v*
 
-  # To remove after tests
-  pull_request:
-    branches: [ "main" ]
-
 env:
   IMAGE_NAME: identity-api
 
@@ -72,5 +68,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag $IMAGE_ID:$VERSION --file ./src/IdentityApi/Dockerfile --output type=image,push=true .
+          docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag $IMAGE_ID:$VERSION --file ./src/IdentityApi/Dockerfile --output type=image,push=true .
 
