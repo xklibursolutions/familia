@@ -44,11 +44,7 @@ jobs:
         UnitTestValidAudience: ${{ vars.UnitTestValidAudience }}
         UnitTestValidIssuer: ${{ vars.UnitTestValidIssuer }}
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
-
     - name: Log into GitHub Container Registry
-      # TODO: Create a PAT with `read:packages` and `write:packages` scopes and save it as an Actions secret `CR_PAT`
       run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Build and push image to GitHub Container Registry
@@ -70,4 +66,4 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag $IMAGE_ID:$VERSION --file ./src/IdentityApi/Dockerfile --output type=image,push=true .
+          docker build --pull --rm -f "./src/IdentityApi/Dockerfile" -t $IMAGE_ID:$VERSION --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --output type=image,push=true .
