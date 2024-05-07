@@ -1,15 +1,15 @@
 using System.Security.Claims;
-using Microsoft.AspNetCore.Identity;
-using Moq;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Handlers;
 using Microsoft.AspNetCore.Http;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Moq;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Models;
+using XkliburSolutions.IdentityApi.Handlers;
 
-namespace XkliburSolutions.Familia.Tests;
+namespace XkliburSolutions.IdentityApi.Tests;
 
 public class UsersHandlerTests
 {

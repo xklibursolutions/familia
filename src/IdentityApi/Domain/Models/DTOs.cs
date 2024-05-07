@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using XkliburSolutions.Familia.Resources;
+using XkliburSolutions.IdentityApi.Resources;
 
-namespace XkliburSolutions.Familia.Domain.Models;
+namespace XkliburSolutions.IdentityApi.Domain.Models;
 
 /// <summary>
 /// Represents user information with optional properties.

@@ -1,10 +1,10 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Domain.Models;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Models;
 
-namespace XkliburSolutions.Familia.Handlers;
+namespace XkliburSolutions.IdentityApi.Handlers;
 
 /// <summary>
 /// Handles user-related operations.

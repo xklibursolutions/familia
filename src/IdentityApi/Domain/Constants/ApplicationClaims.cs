@@ -1,4 +1,4 @@
-﻿namespace XkliburSolutions.Familia.Domain.Constants;
+﻿namespace XkliburSolutions.IdentityApi.Domain.Constants;
 
 /// <summary>
 /// Defines the claims permissions available in the application as constants for easy management and access.

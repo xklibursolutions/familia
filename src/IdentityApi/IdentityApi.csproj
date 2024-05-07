@@ -8,7 +8,7 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
 	<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-	<RootNameSpace>XkliburSolutions.Familia</RootNameSpace>
+	<RootNameSpace>XkliburSolutions.IdentityApi</RootNameSpace>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 

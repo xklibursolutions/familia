@@ -2,11 +2,11 @@
 using Asp.Versioning;
 using Asp.Versioning.Builder;
 using Microsoft.AspNetCore.Mvc;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Models;
-using XkliburSolutions.Familia.Handlers;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Models;
+using XkliburSolutions.IdentityApi.Handlers;
 
-namespace XkliburSolutions.Familia.Extensions;
+namespace XkliburSolutions.IdentityApi.Extensions;
 
 /// <summary>
 /// Extension class for configuring API endpoint mappings.
