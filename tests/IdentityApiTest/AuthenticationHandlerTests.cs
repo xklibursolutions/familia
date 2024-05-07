@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
 using Moq;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Domain.Models;
-using XkliburSolutions.Familia.Handlers;
-using XkliburSolutions.Familia.Resources;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Models;
+using XkliburSolutions.IdentityApi.Handlers;
+using XkliburSolutions.IdentityApi.Resources;
 
-namespace XkliburSolutions.Familia.Tests;
+namespace XkliburSolutions.IdentityApi.Tests;
 
 public class AuthenticationHandlerTests
 {

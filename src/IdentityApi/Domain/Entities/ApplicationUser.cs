@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace XkliburSolutions.Familia.Domain.Entities;
+namespace XkliburSolutions.IdentityApi.Domain.Entities;
 
 /// <summary>
 /// Represents a user in the application with properties and methods specific to the user's identity.

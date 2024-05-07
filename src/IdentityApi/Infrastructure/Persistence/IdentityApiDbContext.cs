@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
 
-namespace XkliburSolutions.Familia.Infrastructure.Persistence;
+namespace XkliburSolutions.IdentityApi.Infrastructure.Persistence;
 
 /// <summary>
 /// Represents the database context used by the Identity API for managing user data and identity information.

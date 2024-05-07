@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Extensions;
-using XkliburSolutions.Familia.Infrastructure.Persistence;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Extensions;
+using XkliburSolutions.IdentityApi.Infrastructure.Persistence;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;

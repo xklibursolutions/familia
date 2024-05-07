@@ -5,9 +5,9 @@ using Asp.Versioning.ApiExplorer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using XkliburSolutions.Familia.Handlers;
+using XkliburSolutions.IdentityApi.Handlers;
 
-namespace XkliburSolutions.Familia.Extensions;
+namespace XkliburSolutions.IdentityApi.Extensions;
 
 /// <summary>
 /// Extension methods for configuring application services.

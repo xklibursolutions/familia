@@ -1,4 +1,4 @@
-﻿namespace XkliburSolutions.Familia.Domain.Constants;
+﻿namespace XkliburSolutions.IdentityApi.Domain.Constants;
 
 /// <summary>
 /// Represents standard status values for API responses.

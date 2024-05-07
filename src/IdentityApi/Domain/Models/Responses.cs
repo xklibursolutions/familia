@@ -1,4 +1,4 @@
-﻿namespace XkliburSolutions.Familia.Domain.Models;
+﻿namespace XkliburSolutions.IdentityApi.Domain.Models;
 
 /// <summary>
 /// Represents a basic response with a status.

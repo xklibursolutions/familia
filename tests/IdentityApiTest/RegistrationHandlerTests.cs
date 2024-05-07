@@ -1,16 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
 using Moq;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Domain.Models;
-using XkliburSolutions.Familia.Handlers;
-using Microsoft.AspNetCore.Http;
-using XkliburSolutions.Familia.Resources;
-using XkliburSolutions.Familia.Domain.Constants;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.Extensions.Configuration;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Models;
+using XkliburSolutions.IdentityApi.Handlers;
+using XkliburSolutions.IdentityApi.Resources;
 
-namespace XkliburSolutions.Familia.Tests;
+namespace XkliburSolutions.IdentityApi.Tests;
 
 public class RegistrationHandlerTests
 {

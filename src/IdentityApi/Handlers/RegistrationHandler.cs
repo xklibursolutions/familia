@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
-using XkliburSolutions.Familia.Domain.Constants;
-using XkliburSolutions.Familia.Domain.Entities;
-using XkliburSolutions.Familia.Domain.Models;
-using XkliburSolutions.Familia.Resources;
+using XkliburSolutions.IdentityApi.Domain.Constants;
+using XkliburSolutions.IdentityApi.Domain.Entities;
+using XkliburSolutions.IdentityApi.Domain.Models;
+using XkliburSolutions.IdentityApi.Resources;
 
-namespace XkliburSolutions.Familia.Handlers;
+namespace XkliburSolutions.IdentityApi.Handlers;
 
 /// <summary>
 /// Handles user registration processes by interacting with the user and role management systems.
