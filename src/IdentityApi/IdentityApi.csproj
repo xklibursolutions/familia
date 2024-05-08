@@ -7,9 +7,10 @@
     <UserSecretsId>07451854-645b-4c36-a6c5-e5a9179e00aa</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-	<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-	<RootNameSpace>XkliburSolutions.IdentityApi</RootNameSpace>
-	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	  <RootNameSpace>XkliburSolutions.IdentityApi</RootNameSpace>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
