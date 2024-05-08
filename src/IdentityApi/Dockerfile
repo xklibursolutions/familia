@@ -1,6 +1,9 @@
 #See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+LABEL org.opencontainers.image.source=https://github.com/xklibursolutions/identity-api
+LABEL org.opencontainers.image.description="Identity API"
+LABEL org.opencontainers.image.licenses=MIT
 USER app
 WORKDIR /app
 EXPOSE 8080
@@ -23,7 +26,3 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "IdentityApi.dll"]
-
-LABEL org.opencontainers.image.source=https://github.com/xklibursolutions/identity-api
-LABEL org.opencontainers.image.description="Identity API"
-LABEL org.opencontainers.image.licenses=MIT
