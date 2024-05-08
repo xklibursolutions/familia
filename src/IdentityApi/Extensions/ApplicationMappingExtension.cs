@@ -63,6 +63,8 @@ public static class ApplicationMappingExtension
         .Produces<DataResponse<User>>(StatusCodes.Status200OK)
         .WithName("Me");
 
+        app.MapHealthChecks("/healthz");
+
         return app;
     }
 }
