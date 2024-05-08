@@ -10,7 +10,8 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<IdentityApiDbContext>(
     options => options.UseSqlite(configuration.GetConnectionString("IdentityDb")));
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services
+    .AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<IdentityApiDbContext>()
     .AddDefaultTokenProviders();
 
@@ -22,6 +23,8 @@ builder.Services.AddApplicationServices();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApiVersioningConfiguration();
 builder.Services.AddSwaggerConfiguration();
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<IdentityApiDbContext>();
 
 WebApplication app = builder.Build();
 
