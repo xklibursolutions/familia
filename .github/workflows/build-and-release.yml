@@ -42,6 +42,11 @@ jobs:
         UnitTestValidAudience: ${{ vars.UnitTestValidAudience }}
         UnitTestValidIssuer: ${{ vars.UnitTestValidIssuer }}
 
+    - name: Setup git
+      run: |
+        git config --local user.email "j.stmichel@xklibursolutions.io"
+        git config --local user.name "Jonathan St-Michel"
+
     - name: Install Versionize
       run: dotnet tool install --global Versionize
 
@@ -53,11 +58,6 @@ jobs:
     - name: No release required
       if: steps.versionize.outcome != 'success'
       run: echo "Skipping Release. No release required."
-
-    - name: Setup git
-      run: |
-        git config --local user.email "j.stmichel@xklibursolutions.io"
-        git config --local user.name "XkliburSolutions"
         
     - name: Push changes to GitHub
       if: steps.versionize.outcome == 'success'
