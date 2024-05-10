@@ -68,5 +68,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag $IMAGE_ID:$VERSION --file ./src/IdentityApi/Dockerfile --output type=image,push=true .
+          docker buildx build --platform linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 --tag $IMAGE_ID:$VERSION --file ./src/IdentityApi/Dockerfile --output type=image,push=true --annotation ""org.opencontainers.image.description=Cet API en C# est conçu pour gérer les fonctionnalités d’authentification, d’inscription et de gestion des identités utilisateurs. Il utilise le framework Microsoft Identity pour fournir une solution robuste et sécurisée." .
 
